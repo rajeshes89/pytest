@@ -15,6 +15,22 @@ def username(request):
 def uuid_value():
     return  ssid#returns a random id
 
+@pytest.fixture()
+def tc_param():
+    common_var = {}
+    common_var["uuid"] = ssid
+    common_var["user"] = user
+    common_var["start_time"] = int(time.time())
+    common_var["cur_time"] = cur_time
+
+    return common_var
+
+@pytest.fixture()
+def srv_hdl():
+    hdl = general_lib.login_to_host("172.20.1.23","cbuser","c@ncunSys100")
+    return hdl
+
+
 @pytest.fixture(scope="session")
 def run_result():
     pass
