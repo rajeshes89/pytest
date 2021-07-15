@@ -30,6 +30,13 @@ def srv_hdl():
     hdl = general_lib.login_to_host("172.20.1.23","cbuser","c@ncunSys100")
     return hdl
 
+@pytest.fixture(scope="session")
+def topology(request):
+    topology = request.config.getoption("--topo")
+    f = open(topology) 
+    data = json.load(f)
+    f.close()
+    return data
 
 @pytest.fixture(scope="session")
 def run_result():
