@@ -25,10 +25,6 @@ def tc_param():
 
     return common_var
 
-@pytest.fixture()
-def srv_hdl():
-    hdl = general_lib.login_to_host("172.20.1.23","cbuser","c@ncunSys100")
-    return hdl
 
 @pytest.fixture(scope="session")
 def topology(request):
