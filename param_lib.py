@@ -1,11 +1,11 @@
 #!/usr/bin/python3
-import network_libs
+import nw_libs
 import logger as log
 import logging
 
 def init_variables(dict_name,tc_param,srv_hdl):
 
-    network_libs.create_dir(srv_hdl,tc_param["uuid"],tc_param["user"],tc_param["cur_time"])
+    nw_libs.create_dir(srv_hdl,tc_param["uuid"],tc_param["user"],tc_param["cur_time"])
     log_var = log.(logging.DEBUG,tc_param["user"],tc_param["uuid"],tc_param["cur_time"],srv_hdl,dict_name)
     test_name = dict_name
     dict_name = {}
